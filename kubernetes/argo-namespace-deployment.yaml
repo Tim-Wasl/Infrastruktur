@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: gitops
+  name: gitops
+  namespace: argocd
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: gitops
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: gitops
+    spec:
+      containers:
+      - image: timcicd/gitops:8a57df89be5a74d67a1198cc7c4435b0e308f86f
+        ports:
+            - containerPort: 9990
+        name: gitops
+        resources: {}
+status: {}
