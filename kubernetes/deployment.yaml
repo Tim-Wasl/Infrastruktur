@@ -21,7 +21,7 @@ spec:
       containers:
       - image: timcicd/gitops:28
         ports:
-            - containerPort: 9990
+            - containerPort: 9991
         name: gitops
         resources: {}
 status: {}
